@@ -1,31 +1,39 @@
 package ru.netologi;
 
-import static org.testng.Assert.*;
+import org.junit.Test;
+import org.junit.Assert;
+
+import static org.junit.Assert.assertEquals;
+
 
 public class CashBackHackerTest {
 
-    @org.testng.annotations.Test
-    public void testRemain() {
-        CashBackHacker service = new CashBackHacker();
-        int amount = 900;
-        int expected = 100;
-        int actual = service.remain(amount);
-        assertEquals(actual,expected);
-    }
-    @org.testng.annotations.Test
+
+    @Test
     public void testRemain1() {
         CashBackHacker service = new CashBackHacker();
         int amount = 1500;
         int expected = 500;
         int actual = service.remain(amount);
-        assertEquals(actual,expected);
+        assertEquals(expected,actual);
     }
-    @org.testng.annotations.Test
+    @Test
     public void testRemain2() {
         CashBackHacker service = new CashBackHacker();
         int amount = 1000;
         int expected = 0;
         int actual = service.remain(amount);
-        assertEquals(actual,expected);
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    public void remain() {
+        CashBackHacker service = new CashBackHacker();
+        int amount = 900;
+        int expected = 100;
+        int actual = service.remain(amount);
+        assertEquals(expected,actual);
+
+
     }
 }
